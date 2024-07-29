@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+    <title>list of vacancies</title>
+</head>
+<body>
+    <h1>vacancy list</h1>
+    <ul>
+        {% for vacancy in vacancies %}
+            <li>
+                <a href="{% url 'vacancy_detail' vacancy.id %}">{{ vacancy.title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
